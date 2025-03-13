@@ -11,22 +11,34 @@ import java.util.List;
 public class Tienda {
     private List<Producto> productos;
 
-  
+    /**
+     * Constructor de la clase Tienda.
+     * Inicializa una lista de productos.
+     */
     public Tienda() {
         this.productos = new ArrayList<>();
     }
 
-
+    /**
+     * Agrega un producto a la tienda.
+     * @param p Producto a agregar.
+     */
     public void agregarProducto(Producto p) {
         productos.add(p);
     }
 
-
+    /**
+     * Obtiene la lista de productos de la tienda.
+     * @return Una nueva lista con los productos actuales en la tienda.
+     */
     public List<Producto> obtenerProductos() {
         return new ArrayList<>(productos);
     }
 
-
+    /**
+     * Calcula el precio total de todos los productos en la tienda.
+     * @return La suma de los precios de todos los productos.
+     */
     public double calcularPrecioTotal() {
         return productos.stream().mapToDouble(Producto::getPrecio).sum();
     }
